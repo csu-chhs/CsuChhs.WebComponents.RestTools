@@ -1,6 +1,6 @@
 name: .NET Core
 
-on: [push]
+on: [pull_request_target]
 
 jobs:
   build:
@@ -8,19 +8,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+    - uses: actions/checkout@v4
       with:
-        dotnet-version: 8.0.100
-    - name: Setup NuGet.exe for use with actions
-      uses: NuGet/setup-nuget@v1.0.5
-        
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8'     
+
     - name: Restore
-      run: nuget restore
+      run: dotnet restore CsuChhs.WebComponents.RestTools.sln
     
     - name: Build with dotnet
-      run: dotnet build --no-restore
-    
+      run: dotnet build CsuChhs.WebComponents.RestTools.sln --no-restore /WarnAsError
+      
     - name: Run Test Suite
       run: dotnet test --no-build
