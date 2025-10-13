@@ -11,7 +11,7 @@ public static class RestExtensions
     /// </summary>
     /// <param name="content"></param>
     /// <returns></returns>
-    public static ProblemDetails? ToProbleDetails(this string content)
+    public static ProblemDetails? ToProblemDetails(this string content)
     {
         return JsonConvert
             .DeserializeObject<ProblemDetails>(content);
