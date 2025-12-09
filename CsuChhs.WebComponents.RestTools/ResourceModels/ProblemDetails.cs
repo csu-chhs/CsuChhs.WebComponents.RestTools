@@ -2,9 +2,9 @@ namespace CsuChhs.WebComponents.RestTools.ResourceModels;
 
 public class ProblemDetails
 {
-    public string Type { get; set; } = string.Empty;
-    public string Title { get; set; } = string.Empty;
+    public string? Type { get; set; }
+    public string? Title { get; set; }
     public int? Status { get; set; }
-    public string Detail { get; set; } = string.Empty;
-    public string Instance { get; set; } = string.Empty;
+    public string? Detail { get; set; }
+    public string? Instance { get; set; }
 }
