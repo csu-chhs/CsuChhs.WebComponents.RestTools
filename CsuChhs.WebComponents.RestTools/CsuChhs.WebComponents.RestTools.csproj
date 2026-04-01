@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>CHHS Application Development Team</Authors>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <PackageProjectUrl>https://github.com/csu-chhs/CsuChhs.WebComponents.RestTools</PackageProjectUrl>
     <Company>College of Health and Human Sciences</Company>
     <PackageId>CsuChhs.WebComponents.RestTools</PackageId>
@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="CsuChhs.WebComponents" Version="1.0.8" />
+      <PackageReference Include="CsuChhs.Utils" Version="1.0.8" />
     <PackageReference Include="RestSharp" Version="114.0.0" />
     <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="114.0.0" />
     <None Include="../README.md" Pack="true" PackagePath="\"/>
