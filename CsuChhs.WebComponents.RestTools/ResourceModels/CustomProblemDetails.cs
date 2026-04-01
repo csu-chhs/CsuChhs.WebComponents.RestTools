@@ -1,6 +1,6 @@
 namespace CsuChhs.WebComponents.RestTools.ResourceModels;
 
-public class ProblemDetails
+public class CustomProblemDetails
 {
     public string? Type { get; set; }
     public string? Title { get; set; }
